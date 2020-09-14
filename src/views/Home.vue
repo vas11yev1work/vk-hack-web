@@ -1,18 +1,47 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="home-page">
+        <Header title="Пожертвования"/>
+        <main>
+            <div class="no-fees-wrap">
+                <div class="no-fees">
+                    <p>У Вас пока нет сборов.<br>Начние доброе дело.</p>
+                    <Button @click="$router.push('/fee-type')">Создать сбор</Button>
+                </div>
+            </div>
+        </main>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        components: {
+            Header: () => import('@/components/Header'),
+            Button: () => import('@/components/Button')
+        }
+    }
 </script>
+
+<style lang="scss" scoped>
+    .home-page {
+        main {
+            .no-fees-wrap {
+                height: calc(100vh - var(--header-height));
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .no-fees {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    p {
+                        color: var(--secondary);
+                        font-size: 16px;
+                        line-height: 20px;
+                        text-align: center;
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+    }
+</style>

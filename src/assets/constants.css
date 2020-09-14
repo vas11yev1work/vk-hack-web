@@ -1,0 +1,13 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --accent: #3F8AE0;
+    --primary: #4986CC;
+    --subhead: #6D7885;
+    --secondary: #818C99;
+    --background: #F2F3F5;
+    --light-separator: #D7D8D9;
+    --light-background: #F5F5F5;
+
+    --header-height: calc(52px + env(safe-area-inset-top));
+}
